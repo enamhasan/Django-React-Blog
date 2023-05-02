@@ -1,21 +1,18 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import layout from './hocs/layout';
-import header from './components/header';
-import categories from './components/categories';
+import Home from "./components/home";
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import Header from "./components/header";
+import categories from "./components/categories";
 
-
-const App = () => (
-    <Router>
-        <layout>
-            <Routes>
-                <Route exact path='/' component={categories} />
-                <Route exact path='/api/categories' component={categories} />
-
-            </Routes>
-        </layout>
-    </Router>
-);
+function App() {
+  return (
+    <BrowserRouter>
+      <Header />
+      <Routes>
+         <Route exact path="/" element={<Home/>} />
+         <Route exact path="/api/categories" element={<categories/>} />
+       </Routes>
+    </BrowserRouter>
+  );
+}
 
 export default App;
