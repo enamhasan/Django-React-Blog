@@ -1,10 +1,32 @@
 from django.http.response import Http404
-from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.http.response import JsonResponse
+from rest_framework import permissions
+from rest_framework.views import APIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 from .models import Category, Post
-from .serializers import CategorySerializer
+from .serializers import CategorySerializer, PostSerializer
 from rest_framework import status
+
+
+class BlogPostListView(ListAPIView):
+    queryset = Post.objects.order_by('-published_on')
+    serializer_class = PostSerializer
+    lookup_field = 'slug'
+    permission_classes = (permissions.AllowAny,)
+
+
+class BlogPostDetailView(RetrieveAPIView):
+    queryset = Post.objects.order_by('-published_on')
+    serializer_class = PostSerializer
+    lookup_field = 'slug'
+    permission_classes = (permissions.AllowAny,)
+
+
+class BlogPostFeaturedView(ListAPIView):
+    queryset = Post.objects.all().filter(featured=True)
+    serializer_class = PostSerializer
+    lookup_field = 'slug'
+    permission_classes = (permissions.AllowAny,)
 
 
 class CategoryView(APIView):

@@ -4,8 +4,15 @@ import logo from '../static/logo.png';
 import "../App.css";
 
 const header = () => (
+    <header>
+      <div className="top-bar text-center">
+			<div className="inside-top-bar grid-container">
+			    <p className="topbar-content m-0">Announcement</p>
+			</div>
+	</div>
+
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link className="navbar-brand" to='/'>Enam Tech Diary</Link>
+        <Link className="navbar-brand" to='/'><img src={logo} className="logo" alt="logo" /></Link>
         <button
             className="navbar-toggler"
             type="button"
@@ -22,12 +29,20 @@ const header = () => (
                 <li className="nav-item active">
                     <NavLink className="nav-link" exact to='/'>Home <span className="sr-only">(current)</span></NavLink>
                 </li>
+                 <li className="nav-item">
+                    <NavLink className="nav-link" exact to='api/'>Blogs</NavLink>
+                </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" exact to='api/categories'>categories</NavLink>
                 </li>
+                 <li className="nav-item">
+                    <NavLink className="nav-link" exact to='test'>categories</NavLink>
+                </li>
+
             </ul>
         </div>
     </nav>
+    </header>
 );
 
 

@@ -1,9 +1,10 @@
 import React from 'react';
-import navbar from '../components/navbar';
+import navbar from '../components/NavBar';
+import Header from '../components/Header';
 
 const layout = (props) => (
     <div>
-        <navbar />
+        <Header />
         {props.children}
     </div>
 );

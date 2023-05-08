@@ -13,6 +13,32 @@ body, html {
   margin: 0;
 }
 
+.grid-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.top-bar {
+    background-color: #636363;
+    color: #ffffff;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 13px;
+}
+
+.top-bar .inside-top-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+     padding: 10px 40px;
+}
+
+.topbar-content {
+  flex: 1 1 auto;
+}
+
+
 .app-logo {
    padding-left: 50px;
 }
