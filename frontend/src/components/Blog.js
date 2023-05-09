@@ -9,7 +9,7 @@ const Blog = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/featured`);
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/blog/featured`);
                 setFeaturedBlog(res.data[0]);
                 console.log(res.data)
             }
@@ -24,7 +24,7 @@ const Blog = () => {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/`);
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/blog/`);
                 setBlogs(res.data);
             }
             catch (err) {

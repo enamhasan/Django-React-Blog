@@ -30,10 +30,10 @@ const header = () => (
                     <NavLink className="nav-link" exact to='/'>Home <span className="sr-only">(current)</span></NavLink>
                 </li>
                  <li className="nav-item">
-                    <NavLink className="nav-link" exact to='api/'>Blogs</NavLink>
+                    <NavLink className="nav-link" exact to='blog/'>Blogs</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" exact to='api/categories'>categories</NavLink>
+                    <NavLink className="nav-link" exact to='blog/categories'>categories</NavLink>
                 </li>
                  <li className="nav-item">
                     <NavLink className="nav-link" exact to='test'>categories</NavLink>

@@ -42,7 +42,13 @@ body, html {
 .app-logo {
    padding-left: 50px;
 }
-
 .logo {
  max-width: 200px;
+}
+
+/* Blog single page */
+
+.post-featured-image{
+  max-width: 100%;
+  height: auto;
 }

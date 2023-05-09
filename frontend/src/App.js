@@ -14,9 +14,9 @@ function App() {
      <Header/>
       <Routes>
          <Route exact={true} path="/" element={<Home/>} />
-         <Route exact="true"  path="/api/categories" element={<Categories/>} />
-         <Route exact={true} path="/api" element={<Blog/>} />
-         <Route exact={true} path='/blog/:id' element={BlogDetail} />
+         <Route exact="true"  path="/blog/categories" element={<Categories/>} />
+         <Route exact={true} path="/blog" element={<Blog/>} />
+         <Route  path='/blog/:slug' element={<BlogDetail />} />
          <Route exact={true} path='/test' element={<Test/>} />
          <Route path="*" element={<NoPage />} />
        </Routes>
