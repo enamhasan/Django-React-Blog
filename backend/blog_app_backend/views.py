@@ -29,6 +29,19 @@ class BlogPostFeaturedView(ListAPIView):
     permission_classes = (permissions.AllowAny,)
 
 
+class BlogPostCategoryView(APIView):
+    serializer_class = PostSerializer
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request, format=None):
+        data = self.request.data
+        category = data['category']
+        print(category)
+        queryset = Post.objects.order_by('-published_on').filter(category=category)
+        serializer = PostSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+
 class CategoryView(APIView):
 
     def get_categories(self, pk):

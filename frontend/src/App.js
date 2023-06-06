@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Categories from "./components/Categories";
 import Blog from "./components/Blog";
 import BlogDetail from "./components/BlogDetails";
+import BlogByCategory from "./components/BlogByCategory";
 import Test from "./components/test";
 import NoPage from "./components/NoPage";
 
@@ -17,6 +18,7 @@ function App() {
          <Route exact="true"  path="/blog/categories" element={<Categories/>} />
          <Route exact={true} path="/blog" element={<Blog/>} />
          <Route  path='/blog/:slug' element={<BlogDetail />} />
+         <Route  path='/blog/category/:category' element={<BlogByCategory/>} />
          <Route exact={true} path='/test' element={<Test/>} />
          <Route path="*" element={<NoPage />} />
        </Routes>

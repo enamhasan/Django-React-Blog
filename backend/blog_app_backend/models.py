@@ -9,6 +9,7 @@ from .utils import unique_slug_generator
 
 User = get_user_model()
 
+
 class Category(models.Model):
     # Post Category
     name = models.CharField(max_length=100)

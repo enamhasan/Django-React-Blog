@@ -7,6 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+    background-color: #f7f8f7;
+    color: #222222;
+}
+
 body, html {
   height: 100%;
   width: 100%;
@@ -19,6 +24,25 @@ body, html {
     max-width: 1200px;
 }
 
+.main-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    }
+
+  .content {
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+.sidebar {
+    margin-top: 20px;
+    padding-top: 40px;
+    background: #fff;
+}
+
+/* Header */
 .top-bar {
     background-color: #636363;
     color: #ffffff;
@@ -38,6 +62,11 @@ body, html {
   flex: 1 1 auto;
 }
 
+/* Navigation */
+
+.site-header, .site-footer {
+    background-color: #ffffff;
+}
 
 .app-logo {
    padding-left: 50px;
@@ -45,6 +74,9 @@ body, html {
 .logo {
  max-width: 200px;
 }
+
+
+
 
 /* Blog single page */
 
