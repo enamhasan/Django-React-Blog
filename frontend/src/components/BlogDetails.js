@@ -4,7 +4,6 @@ import axios from 'axios';
 
 const BlogDetail = () => {
     const [blog, setBlog] = useState({});
-    const [searchParams] = useSearchParams();
     const { slug } = useParams();
 
     useEffect(() => {

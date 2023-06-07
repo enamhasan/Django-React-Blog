@@ -9,6 +9,7 @@ from .utils import unique_slug_generator
 
 User = get_user_model()
 
+
 class Category(models.Model):
     # Post Category
     name = models.CharField(max_length=100)
@@ -22,6 +23,25 @@ class Category(models.Model):
         return self.name
 
 
+class Tag(models.Model):
+        # Post Tag
+        name = models.CharField(max_length=100)
+        slug = models.SlugField(blank=True, null=True)
+
+        class Meta:
+            verbose_name_plural = 'Tags'
+            default_permissions = ()
+            permissions = (
+                ('view_tag', 'Can view tag'),
+                ('add_tag', 'Can add tag'),
+                ('change_tag', 'Can change tag'),
+                ('delete_tag', 'Can delete tag'),
+            )
+        def __str__(self):
+            return self.name
+
+
+
 class Post(models.Model):
     """Model For Blog Posts"""
 
@@ -30,6 +50,7 @@ class Post(models.Model):
     featuredImage = models.ImageField(upload_to='post_image', blank=True, null=True)
     excerpt = models.TextField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='posts', related_query_name='post')
+    tags = models.ManyToManyField('Tag', related_name='posts', related_query_name='post')
 
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='posts', related_query_name='post')

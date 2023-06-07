@@ -10,8 +10,9 @@ const header = () => (
 			    <p className="topbar-content m-0">Announcement</p>
 			</div>
 	</div>
-
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <div className="site-header">
+    <div className="header-wrapper container">
+    <nav className="navbar navbar-expand-lg navbar-light">
         <Link className="navbar-brand" to='/'><img src={logo} className="logo" alt="logo" /></Link>
         <button
             className="navbar-toggler"
@@ -33,15 +34,18 @@ const header = () => (
                     <NavLink className="nav-link" exact to='blog/'>Blogs</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" exact to='blog/categories'>categories</NavLink>
+                    <NavLink className="nav-link" exact to='blog/category/1'>Python</NavLink>
                 </li>
                  <li className="nav-item">
-                    <NavLink className="nav-link" exact to='test'>categories</NavLink>
+                    <NavLink className="nav-link" exact to='test'>Test</NavLink>
                 </li>
 
             </ul>
         </div>
+
     </nav>
+    </div>
+     </div>
     </header>
 );
 
