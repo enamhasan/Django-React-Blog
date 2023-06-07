@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Post
+from .models import Category, Post, Comment, Tag
 
 
 
@@ -12,7 +12,12 @@ class CategoryAdmin(admin.ModelAdmin):
     list_filter = ('name',)
     search_fields = ('name__startswith',)
 
-
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug')
+    list_editable = ('slug',)
+    list_filter = ('name',)
+    search_fields = ('name__startswith',)
 
 
 @admin.register(Post)

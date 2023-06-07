@@ -1,8 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ProfilePic from '../static/profile.jpeg';
 
-const home = () => (
+
+const Home = () => {
+
+const [recentPosts, setRecentPosts] = useState([]);
+  const [postList, setPostList] = useState([]);
+
+  useEffect(() => {
+    const fetchRecentPosts = async () => {
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/blog/recent/`);
+        setRecentPosts(response.data);
+      } catch (error) {
+        console.error('Error fetching recent posts:', error);
+      }
+    };
+
+    const fetchPostList = async () => {
+      try {
+        const response = await axios.get('/api/posts');
+        setPostList(response.data);
+      } catch (error) {
+        console.error('Error fetching post list:', error);
+      }
+    };
+
+    fetchRecentPosts();
+    fetchPostList();
+  }, []);
+
+  return (
     <div className="container">
     <div className="row site-content">
         <div className="col-md-9 col-lg-9 main-content">
@@ -29,9 +59,23 @@ const home = () => (
                                 </ul>
                             </div>
 		    </div>
+		     <div className="recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+          {recentPosts.map(post => (
+            <li key={post.id}>
+              <h3>{post.title}</h3>
+              <p>{post.content}</p>
+              <p>{post.created_at}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
 		</div>
     </div>
     </div>
-);
 
-export default home;
+);
+};
+
+export default Home;

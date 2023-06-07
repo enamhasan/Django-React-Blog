@@ -1,6 +1,6 @@
 from django.http.response import Http404
 from rest_framework.response import Response
-from rest_framework import permissions
+from rest_framework import permissions, generics
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from .models import Category, Post
@@ -40,6 +40,12 @@ class BlogPostCategoryView(APIView):
         queryset = Post.objects.order_by('-published_on').filter(category=category)
         serializer = PostSerializer(queryset, many=True)
         return Response(serializer.data)
+
+
+class RecentPostsView(ListAPIView):
+    queryset = Post.objects.all().order_by('-published_on')[:3]
+    serializer_class = PostSerializer
+    permission_classes = (permissions.AllowAny,)
 
 
 class CategoryView(APIView):
