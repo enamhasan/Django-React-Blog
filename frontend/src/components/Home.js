@@ -48,7 +48,7 @@ const [recentPosts, setRecentPosts] = useState([]);
        <div className="widget-area sidebar is-right-sidebar col-md-3 col-lg-3" id="right-sidebar">
 	        <div className="inside-right-sidebar">
 	            <div class="sidebar-widget widget-about mb-50 pt-30 pr-30 pb-30 pl-30 bg-white border-radius-5 has-border  wow fadeInUp  animated">
-                                <img className="about-author-img mb-25" src={ProfilePic} alt="enamhasan profile pic"/>
+                                <img className="about-author-img mb-25" src={ProfilePic} alt="enamhasan profile picture"/>
                                 <h5 className="mb-20">Hello, I'm Enam</h5>
                                 <p className="font-medium text-muted">Hi, I’m Enam, a Florida native, who left my career in corporate wealth management six years ago to embark on a summer of soul searching that would change the course of my life forever.</p>
                                 <strong>Follow me: </strong>

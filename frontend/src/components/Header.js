@@ -33,8 +33,8 @@ const header = () => (
                  <li className="nav-item">
                     <NavLink className="nav-link" exact to='blog/'>Blogs</NavLink>
                 </li>
-                <li className="nav-item">
-                    <NavLink className="nav-link" exact to='blog/category/1'>Python</NavLink>
+                 <li className="nav-item">
+                    <NavLink className="nav-link" exact to='about'>About</NavLink>
                 </li>
                  <li className="nav-item">
                     <NavLink className="nav-link" exact to='test'>Test</NavLink>

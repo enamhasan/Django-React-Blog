@@ -2,6 +2,7 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Header from "./components/Header";
 import Home from "./components/Home";
+import AboutMe from "./components/AboutMe";
 import Categories from "./components/Categories";
 import Blog from "./components/Blog";
 import BlogDetail from "./components/BlogDetails";
@@ -20,6 +21,7 @@ function App() {
          <Route  path='/blog/:slug' element={<BlogDetail />} />
          <Route  path='/blog/category/:category' element={<BlogByCategory/>} />
          <Route exact={true} path='/test' element={<Test/>} />
+         <Route exact={true} path='/about' element={<AboutMe/>} />
          <Route path="*" element={<NoPage />} />
        </Routes>
     </BrowserRouter>
