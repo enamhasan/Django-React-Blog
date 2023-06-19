@@ -6,13 +6,13 @@ const AboutMe = () => {
 
     <div className="container">
       <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 sidebar">
           <img src={ProfilePic} alt="Profile Picture" className="img-fluid rounded-circle mb-3" />
           <h2 className="h4">EnamHasan</h2>
           <p className="text-muted">enamhasan . <span> he/him</span></p>
           <p className="profile-note">Software Engineer | Python coder | Shopify Expert | Indie Maker</p>
           <div class="d-grid gap-2 d-md-block">
-              <button class="btn btn-primary" type="button">Button</button>
+              <button class="btn btn-outline contact-btn" type="button">Ping me</button>
           </div>
          <div className="d-flex justify-content-between">
 
@@ -36,7 +36,7 @@ const AboutMe = () => {
                 </svg>
                     <a rel="nofollow me" className="Link--primary" href="http://enamhasan.com/">http://enamhasan.com/</a>
                 </li>
-                  <li itemprop="social" class="vcard-detail pt-1 "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="nfc108jr8pqfsddzhlg9ltpeir41x8r" class="octicon"><title id="nfc108jr8pqfsddzhlg9ltpeir41x8r">LinkedIn</title>
+                  <li itemprop="social" className="vcard-detail pt-1 "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" role="img" aria-labelledby="nfc108jr8pqfsddzhlg9ltpeir41x8r" class="octicon"><title id="nfc108jr8pqfsddzhlg9ltpeir41x8r">LinkedIn</title>
                     <g clip-path="url(#clip0_202_91845)">
                     <path d="M14.5455 0H1.45455C0.650909 0 0 0.650909 0 1.45455V14.5455C0 15.3491 0.650909 16 1.45455 16H14.5455C15.3491 16 16 15.3491 16 14.5455V1.45455C16 0.650909 15.3491 0 14.5455 0ZM5.05746 13.0909H2.912V6.18764H5.05746V13.0909ZM3.96291 5.20073C3.27127 5.20073 2.712 4.64 2.712 3.94982C2.712 3.25964 3.272 2.69964 3.96291 2.69964C4.65236 2.69964 5.21309 3.26036 5.21309 3.94982C5.21309 4.64 4.65236 5.20073 3.96291 5.20073ZM13.0938 13.0909H10.9498V9.73382C10.9498 8.93309 10.9353 7.90327 9.83491 7.90327C8.71855 7.90327 8.54691 8.77527 8.54691 9.67564V13.0909H6.40291V6.18764H8.46109V7.13091H8.49018C8.77673 6.58836 9.47636 6.016 10.52 6.016C12.6924 6.016 13.0938 7.44582 13.0938 9.30473V13.0909V13.0909Z" fill="currentColor"></path>
                     </g></svg>

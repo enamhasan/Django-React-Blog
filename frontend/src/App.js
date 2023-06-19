@@ -20,7 +20,6 @@ function App() {
          <Route exact={true} path="/blog" element={<Blog/>} />
          <Route  path='/blog/:slug' element={<BlogDetail />} />
          <Route  path='/blog/category/:category' element={<BlogByCategory/>} />
-         <Route exact={true} path='/test' element={<Test/>} />
          <Route exact={true} path='/about' element={<AboutMe/>} />
          <Route path="*" element={<NoPage />} />
        </Routes>

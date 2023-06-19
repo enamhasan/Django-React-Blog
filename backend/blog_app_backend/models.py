@@ -24,22 +24,22 @@ class Category(models.Model):
 
 
 class Tag(models.Model):
-        # Post Tag
-        name = models.CharField(max_length=100)
-        slug = models.SlugField(blank=True, null=True)
+    # Post Tag
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(blank=True, null=True)
 
-        class Meta:
-            verbose_name_plural = 'Tags'
-            default_permissions = ()
-            permissions = (
-                ('view_tag', 'Can view tag'),
-                ('add_tag', 'Can add tag'),
-                ('change_tag', 'Can change tag'),
-                ('delete_tag', 'Can delete tag'),
-            )
-        def __str__(self):
-            return self.name
+    class Meta:
+        verbose_name_plural = 'Tags'
+        default_permissions = ()
+        permissions = (
+            ('view_tag', 'Can view tag'),
+            ('add_tag', 'Can add tag'),
+            ('change_tag', 'Can change tag'),
+            ('delete_tag', 'Can delete tag'),
+        )
 
+    def __str__(self):
+        return self.name
 
 
 class Post(models.Model):
@@ -99,6 +99,7 @@ def update_published_on(sender, instance, **kwargs):
             instance.published_on = timezone.now()
     print('Published On Updated')
 
+
 class Comment(models.Model):
     """Model For The Comments In The Blog Posts"""
 
@@ -113,3 +114,16 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'Post - "{self.post.title}", Body - "{self.body}"'
+
+
+class Contact(models.Model):
+    """Model For The Contact Form"""
+
+    senderName = models.CharField(max_length=100)
+    senderEmail = models.EmailField()
+    message = models.TextField()
+    is_read = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Name - "{self.senderName}", Email - "{self.senderEmail}"'

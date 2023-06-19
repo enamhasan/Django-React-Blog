@@ -48,9 +48,9 @@ const [recentPosts, setRecentPosts] = useState([]);
        <div className="widget-area sidebar is-right-sidebar col-md-3 col-lg-3" id="right-sidebar">
 	        <div className="inside-right-sidebar">
 	            <div class="sidebar-widget widget-about mb-50 pt-30 pr-30 pb-30 pl-30 bg-white border-radius-5 has-border  wow fadeInUp  animated">
-                                <img className="about-author-img mb-25" src={ProfilePic} alt="enamhasan profile picture"/>
+                                <img className="about-author-img img-fluid rounded-circle mb-3" src={ProfilePic} alt="enamhasan profile picture"/>
                                 <h5 className="mb-20">Hello, I'm Enam</h5>
-                                <p className="font-medium text-muted">Hi, I’m Enam, a Florida native, who left my career in corporate wealth management six years ago to embark on a summer of soul searching that would change the course of my life forever.</p>
+                                <p className="font-medium text-muted">Hi, I’m Enam, I am a Full Stack Python Developer with more than 10 years of professional experience in Software and web application development, e-commerce solutions, teamwork, and team management. Higher education IT background. Ability to understand project requirements easily, and define solutions from abstract concepts. Quick learner, adapt to new ideas quickly.</p>
                                 <strong>Follow me: </strong>
                                 <ul className="header-social-network d-inline-block list-inline color-white mb-20">
                                     <li className="list-inline-item"><a className="fb" href="#" target="_blank" title="Facebook"><i className="elegant-icon social_facebook"></i></a></li>

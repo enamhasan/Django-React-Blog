@@ -95,3 +95,34 @@ body, html {
     border-style: solid;
     border-width: 1px;
 }
+
+.Box-body a img {
+   padding: 2px;
+   }
+
+
+
+.contact-btn {
+    width: 90%;
+    background-color: #f6f8fa;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #1f232826;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.octicon {
+    float: left;
+    width: 16px;
+    margin-top: 4px;
+    margin-right: 8px;
+    color: #656d76;
+    text-align: center;
+}
+
+.sidebar .Link--primary {
+    color: #222222;
+    text-decoration: none;
+}
