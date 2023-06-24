@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Post
+from .models import Category, Post, Contact
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -14,3 +14,7 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = '__all__'
 
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = '__all__'

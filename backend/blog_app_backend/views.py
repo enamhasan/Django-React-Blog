@@ -4,7 +4,7 @@ from rest_framework import permissions, generics
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from .models import Category, Post
-from .serializers import CategorySerializer, PostSerializer
+from .serializers import CategorySerializer, PostSerializer, ContactSerializer
 from rest_framework import status
 
 
@@ -47,6 +47,20 @@ class RecentPostsView(ListAPIView):
     serializer_class = PostSerializer
     permission_classes = (permissions.AllowAny,)
 
+
+class ContactView(APIView):
+    serializer_class = ContactSerializer
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request, format=None):
+        data = self.request.data
+        print(data)
+        serializer = ContactSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        print(serializer.errors)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class CategoryView(APIView):
 

@@ -37,7 +37,7 @@ const header = () => (
                     <NavLink className="nav-link" exact to='about'>About</NavLink>
                 </li>
                  <li className="nav-item">
-                    <NavLink className="nav-link" exact to='test'>Test</NavLink>
+                    <NavLink className="nav-link" exact to='contact'>Contact</NavLink>
                 </li>
 
             </ul>

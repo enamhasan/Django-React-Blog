@@ -1,5 +1,6 @@
 import React from 'react';
 import ProfilePic from '../static/profilePic.jpeg';
+import { Link } from 'react-router-dom';
 
 const AboutMe = () => {
   return (
@@ -12,7 +13,9 @@ const AboutMe = () => {
           <p className="text-muted">enamhasan . <span> he/him</span></p>
           <p className="profile-note">Software Engineer | Python coder | Shopify Expert | Indie Maker</p>
           <div class="d-grid gap-2 d-md-block">
-              <button class="btn btn-outline contact-btn" type="button">Ping me</button>
+          <Link to="/contact">
+              <button  class="btn btn-outline contact-btn" type="button">Ping me</button>
+            </Link>
           </div>
          <div className="d-flex justify-content-between">
 
