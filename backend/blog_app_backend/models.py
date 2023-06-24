@@ -121,6 +121,7 @@ class Contact(models.Model):
 
     senderName = models.CharField(max_length=100)
     senderEmail = models.EmailField()
+    subject = models.CharField(max_length=100, blank=True, null=True)
     message = models.TextField()
     is_read = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

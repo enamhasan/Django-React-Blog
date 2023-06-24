@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Post, Comment, Tag
+from .models import Category, Post, Comment, Tag, Contact
 
 
 
@@ -18,6 +18,12 @@ class TagAdmin(admin.ModelAdmin):
     list_editable = ('slug',)
     list_filter = ('name',)
     search_fields = ('name__startswith',)
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('senderName', 'senderEmail', 'subject', 'created_at')
+    list_filter = ('senderName', 'senderEmail', 'subject')
+    search_fields = ('senderName__startswith', 'senderEmail__startswith', 'subject__startswith')
 
 
 @admin.register(Post)
