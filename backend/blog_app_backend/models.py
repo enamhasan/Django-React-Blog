@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.db.models.signals import post_save, pre_save
+from django.core.mail import send_mail
+from django.conf import settings
 from django.dispatch import receiver
 from django.utils import timezone
 from django.template.defaultfilters import slugify
@@ -128,3 +130,17 @@ class Contact(models.Model):
 
     def __str__(self):
         return f'Name - "{self.senderName}", Email - "{self.senderEmail}"'
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def save(self, *args, **kwargs):
+        is_new = not self.pk  # Check if it's a new contact
+
+        super().save(*args, **kwargs)
+
+        if is_new:
+            # Send email to the admin
+            subject = f"New email from enamhasan.com: {self.subject}"
+            message = f"A new contact has been submitted.\n\nName: {self.senderName}\nEmail: {self.senderEmail}\nSubject: {self.subject}\nMessage: {self.message}"
+            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.ADMIN_EMAIL])
