@@ -130,8 +130,12 @@ EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'  # Name for all the SenGrid accounts
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = 'sendgrid api key'  # API key for the account
 
 # Admin email
 DEFAULT_FROM_EMAIL = 'noreply@enamhasan.com'
 ADMIN_EMAIL = 'enamhasan@gmail.com'  # Replace with the admin email address
+
+# Celery settings
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"

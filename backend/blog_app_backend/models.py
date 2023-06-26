@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.dispatch import receiver
 from django.utils import timezone
+from .tasks import send_email_task
 from django.template.defaultfilters import slugify
 
 from .utils import unique_slug_generator
@@ -143,4 +144,4 @@ class Contact(models.Model):
             # Send email to the admin
             subject = f"New email from enamhasan.com: {self.subject}"
             message = f"A new contact has been submitted.\n\nName: {self.senderName}\nEmail: {self.senderEmail}\nSubject: {self.subject}\nMessage: {self.message}"
-            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.ADMIN_EMAIL])
+            send_email_task.delay(subject, message, settings.DEFAULT_FROM_EMAIL, [settings.ADMIN_EMAIL])

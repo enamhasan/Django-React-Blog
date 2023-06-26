@@ -28,7 +28,7 @@ const Contact = () => {
       console.log(response.data);
       // Reset the form fields
       setFormData({ senderName: '', senderEmail: '', subject: '', message: '' });
-      setSuccessMessage('Your message has been sent successfully!');
+      setSuccessMessage('Thank you! I would like to assure you that I will respond to your inquiry as soon as possible.');
       setErrorMessage('');
     })
     .catch((error) => {
