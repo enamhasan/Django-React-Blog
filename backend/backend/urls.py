@@ -12,7 +12,7 @@ admin.site.index_title = 'Blog App'
 # URLs
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('blog/', include('blog_app_backend.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
