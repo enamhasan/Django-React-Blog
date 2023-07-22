@@ -5,6 +5,8 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 
+from blog_app_backend.views import index
+
 # admin site customizations
 admin.site.site_header = 'Django React Blog'
 admin.site.index_title = 'Blog App'
@@ -14,6 +16,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('admin', admin.site.urls),
     path('blog/', include('blog_app_backend.urls')),
+    path('', index, name='index'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [re_path(r'^.*', TemplateView.as_view(template_name='index.html'))]
