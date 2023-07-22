@@ -7,6 +7,11 @@ from .models import Category, Post
 from .serializers import CategorySerializer, PostSerializer, ContactSerializer
 from rest_framework import status
 
+from django.shortcuts import render
+
+def react_app(request):
+    return render(request, 'index.html')
+
 
 class BlogPostListView(ListAPIView):
     queryset = Post.objects.order_by('-published_on')
