@@ -12,7 +12,7 @@ const [recentPosts, setRecentPosts] = useState([]);
   useEffect(() => {
     const fetchRecentPosts = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/blog/recent/`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/recent/`);
         setRecentPosts(response.data);
       } catch (error) {
         console.error('Error fetching recent posts:', error);

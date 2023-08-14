@@ -1,4 +1,5 @@
 from django.http.response import Http404
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import permissions, generics
 from rest_framework.views import APIView
@@ -9,6 +10,7 @@ from rest_framework import status
 
 from django.shortcuts import render
 
+
 def index(request):
     return render(request, 'index.html')
 
@@ -17,7 +19,7 @@ class BlogPostListView(ListAPIView):
     queryset = Post.objects.order_by('-published_on')
     serializer_class = PostSerializer
     lookup_field = 'slug'
-    permission_classes = (permissions.AllowAny,)
+    permission_classes = [IsAuthenticated]
 
 
 class BlogPostDetailView(RetrieveAPIView):

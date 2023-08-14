@@ -31,7 +31,7 @@ const header = () => (
                     <NavLink className="nav-link" exact to='/'>Home <span className="sr-only">(current)</span></NavLink>
                 </li>
                  <li className="nav-item">
-                    <NavLink className="nav-link" exact to='blog/'>Blogs</NavLink>
+                    <NavLink className="nav-link" exact to='blogs/'>Blogs</NavLink>
                 </li>
                  <li className="nav-item">
                     <NavLink className="nav-link" exact to='about'>About</NavLink>

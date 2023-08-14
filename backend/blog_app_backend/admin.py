@@ -1,9 +1,22 @@
 from django.contrib import admin
+from django.contrib.admin.models import LogEntry, DELETION
 from .models import Category, Post, Comment, Tag, Contact
 
 
 
+
 # Register your modelse.
+
+@admin.register(LogEntry)
+class LogEntryAdmin(admin.ModelAdmin):
+    list_display = ['action_time', 'user', 'content_type', 'object_id', 'action_flag']
+    list_filter = ['action_flag', 'user', 'content_type']
+    def has_change_permission(self, request, obj=None):
+        return False
+    def has_delete_permission(self, request, obj=None):
+        return False
+    def has_add_permission(self, request):
+        return False
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
