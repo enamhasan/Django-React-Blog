@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.contrib.admin.models import LogEntry, DELETION
 from .models import Category, Post, Comment, Tag, Contact
+from django_summernote.admin import SummernoteModelAdmin
+
 
 
 
@@ -40,7 +42,7 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', 'author', 'category', 'is_published', 'created_on', 'published_on', 'last_edited')
     list_editable = ('is_published',)
     list_filter = ('is_published', 'category', 'author')
@@ -69,6 +71,10 @@ class PostAdmin(admin.ModelAdmin):
         if not change:
             obj.author = request.user
         super().save_model(request, obj, form, change)
+
+
+class PostAdmin():
+    summernote_fields = ('content',)
 
 
 

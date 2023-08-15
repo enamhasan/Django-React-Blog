@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'blog_app_backend',
     'rest_framework',
     'corsheaders',
+    'django_summernote'
 
 ]
 

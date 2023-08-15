@@ -17,6 +17,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('admin', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
     path('api/', include('blog_app_backend.urls')),
     path('', index, name='index'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
